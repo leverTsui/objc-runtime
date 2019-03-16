@@ -49,7 +49,7 @@ struct objc_class;
 struct objc_object;
 
 typedef struct objc_class *Class;
-typedef struct objc_object *id;
+typedef struct objc_object *id; // id为指向一个类实例的指针
 
 namespace {
     struct SideTable;
@@ -167,7 +167,7 @@ union isa_t
 
 struct objc_object {
 private:
-    isa_t isa;
+    isa_t isa; //根据isa，不总是可以顺藤摸瓜找到对象所属的类
 
 public:
 
